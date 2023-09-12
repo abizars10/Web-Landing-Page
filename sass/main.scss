@@ -1,0 +1,110 @@
+@import "fonts";
+@import "mixin";
+@import "variables";
+
+// Stlyes
+body {
+  font-family: "Montserrat", sans-serif;
+  &::before {
+    content: "";
+    background-image: url(../img/bg.png);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 60vmax;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    @media (max-width: 992px) {
+      opacity: 0.5;
+    }
+  }
+}
+
+// Navigation
+.custom-nav {
+  .navbar-brand {
+    img {
+      width: 20px;
+      height: 20px;
+      background-color: $primaryColor;
+      margin-top: -8px;
+    }
+    span {
+      color: $primaryColor;
+      font-weight: 700;
+      font-size: 1.4em;
+      margin-left: 0.4em;
+    }
+  }
+
+  #navbarNav {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: $primaryColor;
+          font-weight: 500;
+          text-transform: lowercase;
+          margin-left: 2.4em;
+          transition: 0.3s color ease;
+
+          &:hover {
+            color: darken($primaryColor, 25%);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    margin-top: -1em;
+  }
+}
+
+// custom section
+.custom-section {
+  margin-top: 3em;
+  h2 {
+    font-weight: 700;
+    font-size: 4rem;
+    color: $secondaryColor;
+    line-height: 1;
+  }
+
+  h3 {
+    font-weight: 400;
+    font-size: 2rem;
+    color: $secondaryColor;
+    line-height: 1;
+  }
+
+  p {
+    color: #333;
+    font-size: 1rem;
+    margin-top: 2em;
+  }
+
+  a {
+    @include tombol();
+    margin-top: 1.2em;
+    border: 1px solid transparent;
+    transition: 0.5s ease;
+
+    &:hover {
+      color: $primaryColor;
+      border: 1px solid $primaryColor;
+      background-color: transparent;
+    }
+  }
+
+  @media (max-width: 992px) {
+    h2,
+    h3,
+    p {
+      text-shadow: 1px 1px 2px rgba($tertiaryColor, 0.4);
+    }
+  }
+}
